@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Manufacturer</title>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="schneider_invoiceCtrl" ng-init="onload()">
+<div class="container-fluid"> 
+  
+  <!-- Header Section starts here-->
+  <header class="header_bg">
+    <div class="header_left"></div>
+    <div class="header_right"></div>
+    <div class="container-fluid">
+      <div class="logo_pharma"> <a href="index.html"><img src="images/logo.png" alt="logo"/></a> </div>
+      <div class="banner_text_right"> Blockchain for Business<br>
+        <b>WITH IBM BLOCKCHAIN</b> </div>
+    </div>
+  </header>
+  <!-- Header Section ends here--> 
+  
+  <!-- Content Section ends here-->
+  <div class="breadcrumb_main">
+    <div class="left"><a  ><img src="images/back.png">&nbsp;Home</a></div>
+    <div class="right"><a  ><img src="images/sign_out.png">&nbsp;Signout</a></div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="dashboard">
+    <div class="dashboard_left">
+      <h1>Manufacturer</h1>
+      <div class="user"><span>Manufacturer</span>
+        Chief Supplying Officer</div>
+      <div class="left_menu">
+        <button class="accordion"><img src="images/icon_1.gif">&nbsp;&nbsp;Create</button>
+        <div class="panel">
+          <ul>
+            <li><a href="/index.html#!/schneider_purchaseOrder" ng-click="refreshPage()">Purchase Order</a></li>
+            <li><a href="/index.html#!/schneider_goodReceipt" ng-click="refreshPage()">Goods Receipt</a></li>
+          </ul>
+        </div>
+        <button class="accordion_1" ng-click="navigate('/index.html#!/schneider_consumption')"><img src="images/icon_2.gif">&nbsp;&nbsp;Consumption</button>
+        <button class="accordion_1" ng-click="navigate('/index.html#!/schneider_payment')"><img src="images/icon_3.gif">&nbsp;&nbsp;Payment</button>
+        <button class="accordion"><img src="images/icon_4.gif">&nbsp;&nbsp;Search</button>
+        <div class="panel">
+          <ul>
+            <li><a href="/index.html#!/schneider_purchaseOrder_search" ng-click="refreshPage()">Purchase Order</a></li>
+            <!-- <li><a  >Goods Receipt</a></li> -->
+            <li><a href="/index.html#!/schneider_invoice" ng-click="refreshPage()">Invoice</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="left_submenu">
+        <li><a href="/index.html#!/schneider_notifications" ng-click="refreshPage()"><img src="images/icon_5.gif">&nbsp;&nbsp;Notification</a></li>
+        <li><a href="/index.html#!/schneider_report" ng-click="refreshPage()"><img src="images/icon_6.gif">&nbsp;&nbsp;Report</a></li>
+      </ul>
+  </div>
+    <div class="dashboard_right">
+        <div class="loader" ng-show="loading" ></div>
+        <div style="text-align: center" class="alert alert-danger" ng-show="failuer2">
+          No data to display
+        </div>
+    <div ng-hide="Search">
+    <h3>Invoice</h3>
+    <table>
+              
+        <tr ><span ng-show="notGen">greater than 90 days and Invoice not Generated</span></tr>
+                <tr ng-repeat="m in POData">
+                      <td>Material Code : <a  ><span >{{m.materialCode}}</span>  Batch Id:  <span >{{m.batchId}}</span>   </a> Invoice Status : <a  ><span >{{m.poStatus}}</span></a> </td>
+                    </tr>
+                 
+      </table>
+
+
+      <table>
+          
+        <tr><span ng-show="Unpaid"> Invoice generated and pending Submission with Supplier</span></tr>
+         <tr ng-repeat="y in PODataGenerated">
+          <td>Invoice No. : <a  >{{y.invoiceDoc}} </a> Material Code : <a  >{{y.materialCode}} </a>Batch Id:<a  > {{y.batchId}}   </a> Invoice Status : <a  >{{y.poStatus}}</a> Consumption Quantity <a  >{{y.quantity}}</a>Amount <a  >{{y.amount}}</a> </td>
+             </tr>
+      </table>
+     
+      <table>
+              
+        <tr ><span ng-show="Pending">Invoice generated and pending payment with Manufacturer</span></tr>
+                <tr ng-repeat="n in PODataPending">
+                  <td>Invoice No. : <a  ><span>{{n.invoiceDoc}}</span> </a> Material Code : <a  ><span >{{n.materialCode}}</span>  </a> Batch Id: <a>  <span >{{n.batchId}}</span>   </a> Invoice Status : <a  ><span >{{n.poStatus}}</span></a>  Consumption Quantity <a  ><span>{{n.quantity}}</span></a>
+                    Amount <a  ><span>{{n.amount}}</span></a><a href="/index.html#!/schneider_invoice_success" ng-click="generateInvoice(n.invoiceDoc)"><img src="images/arrow.png"></a> </td>
+                    </tr>
+                 
+      </table>
+      <table>
+              
+                      <tr><span ng-show="paid">Invoice generated and paid</span></tr>
+                      <tr ng-repeat="x in PODataPaid">
+                        <td>Invoice No. : <a  ><span>{{x.invoiceDoc}}</span> </a> Material Code : <a  ><span >{{x.materialCode}}</span> </a>  Batch Id:  <a> <span >{{x.batchId}}</span>   </a> Invoice Status : <a  ><span >{{x.poStatus}}</span></a>  Consumption Quantity <a  ><span>{{x.quantity}}</span></a>
+                          Amount <a  ><span>{{x.amount}}</span></a>  </td>
+                          </tr>
+                         
+        </table>
+       
+
+    </div>
+    
+  
+    </div>
+    <div class="clearfix"></div>
+  
+<!-- Content Section ends here--> 
+
+<!-- Footer Section starts here-->
+<footer class="footer">©  copyright 2018</footer>
+<!-- Footer Section ends here--> 
+</body>
+</html>

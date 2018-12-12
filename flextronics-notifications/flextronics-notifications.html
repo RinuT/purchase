@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Supplier</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="refresh" content="0">
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="flextronics-notifications-successCtrl_new" ng-init="onload()">
+<div class="container-fluid"> 
+  
+  <!-- Header Section starts here-->
+  <header class="header_bg">
+    <div class="header_left"></div>
+    <div class="header_right"></div>
+    <div class="container-fluid">
+      <div class="logo_pharma"> <a href="index.html"><img src="images/logo.png" alt="logo"/></a> </div>
+      <div class="banner_text_right"> Blockchain for Business<br>
+        <b>WITH IBM BLOCKCHAIN</b> </div>
+    </div>
+  </header>
+  <!-- Header Section ends here--> 
+  
+  <!-- Content Section ends here-->
+  <div class="breadcrumb_main">
+      <div class="left"><a  ><img src="images/back.png">&nbsp;Home</a></div>
+      <div class="right"><a  ><img src="images/sign_out.png">&nbsp;Signout</a></div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="dashboard_drk">
+      <div class="dashboard_drk_left">
+        <h1>Supplier</h1>
+        <div class="user"><span>Supplier</span>
+          Chief Supplying Officer</div>
+      <ul class="left_menu"><li><a href="/index.html#!/flextronics-purchase-order" ng-click="refreshPage()"><img src="images/icon_9.png">Purchase Order</a></li><li><a href="/index.html#!/invoice" ng-click="refreshPage()"><img src="images/icon_10.png">Invoice</a></li><div class="clearfix"></div></ul>
+        
+        <ul class="left_submenu">
+          <li><a href="/index.html#!/flextronics-notifications" ng-click="refreshPage()"><img src="images/icon_7.png">&nbsp;&nbsp;Notification</a></li>
+          <li><a href="/index.html#!/flextronics-report" ng-click="refreshPage()"><img src="images/icon_8.png">&nbsp;&nbsp;Report</a></li>
+        </ul>
+      </div>
+    <div class="dashboard_drk_right">
+           <div style="text-align: center" class="alert alert-danger" ng-show="fall">
+         No data to display
+        </div>
+        <div class="loader" ng-show="loading" ></div>
+    <div ng-hide="Search">
+    <h3> Overdue Notifications(>90 days)</h3>
+    
+
+      <table>
+          
+                      <tr ng-repeat="x in PODataUnpaid">
+                        <td>PO No. : <a  ><span>{{x.poNumber}}</span> </a> Material Code : <a  ><span >{{x.materialCode}}</span></a>  Batch Id:<a> <span >{{x.batch}}</span>   </a>  Available Quantity <a  ><span>{{x.quantity}}</span></a>Receipt Date <a  ><span>{{x.date}}</span></a>Overdue period<a  ><span>{{x.day}}</span></a> </td>
+                          </tr>
+                         
+        </table>
+       
+
+    </div>
+    
+  
+    </div>
+    <div class="clearfix"></div>
+  
+<!-- Content Section ends here--> 
+
+<!-- Footer Section starts here-->
+<footer class="footer">©  copyright 2018</footer>
+<!-- Footer Section ends here--> 
+</body>
+</html>
