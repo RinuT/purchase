@@ -36,32 +36,32 @@
       <button class="accordion"><img src="images/icon_1.gif">&nbsp;&nbsp;Create</button>
       <div class="panel">
         <ul>
-          <li><a href="/index.html#!/schneider_purchaseOrder" ng-click="refreshPage()">Purchase Order</a></li>
-          <li><a href="/index.html#!/schneider_goodReceipt" ng-click="refreshPage()">Goods Receipt</a></li>
+          <li><a href="/schneider/index.html#!/schneider_purchaseOrder" ng-click="refreshPage()">Purchase Order</a></li>
+          <li><a href="/schneider/index.html#!/schneider_goodReceipt" ng-click="refreshPage()">Goods Receipt</a></li>
         </ul>
       </div>
-      <button class="accordion_1" ng-click="navigate('/index.html#!/schneider_consumption')"><img src="images/icon_2.gif">&nbsp;&nbsp;Consumption</button>
-      <button class="accordion_1" ng-click="navigate('/index.html#!/schneider_payment')"><img src="images/icon_3.gif">&nbsp;&nbsp;Payment</button>
+      <button class="accordion_1" ng-click="navigate('/schneider/index.html#!/schneider_consumption')"><img src="images/icon_2.gif">&nbsp;&nbsp;Consumption</button>
+      <button class="accordion_1" ng-click="navigate('/schneider/index.html#!/schneider_payment')"><img src="images/icon_3.gif">&nbsp;&nbsp;Payment</button>
       <button class="accordion"><img src="images/icon_4.gif">&nbsp;&nbsp;Search</button>
       <div class="panel">
         <ul>
-          <li><a href="/index.html#!/schneider_purchaseOrder_search" ng-click="refreshPage()">Purchase Order</a></li>
+          <li><a href="/schneider/index.html#!/schneider_purchaseOrder_search" ng-click="refreshPage()">Purchase Order</a></li>
           <!-- <li><a  >Goods Receipt</a></li> -->
-          <li><a href="/index.html#!/schneider_invoice" ng-click="refreshPage()">Invoice</a></li>
+          <li><a href="/schneider/index.html#!/schneider_invoice" ng-click="refreshPage()">Invoice</a></li>
         </ul>
       </div>
     </div>
     <ul class="left_submenu">
-      <li><a href="/index.html#!/schneider_notifications" ng-click="refreshPage()"><img src="images/icon_5.gif">&nbsp;&nbsp;Notification</a></li>
-      <li><a href="/index.html#!/schneider_report" ng-click="refreshPage()"><img src="images/icon_6.gif">&nbsp;&nbsp;Report</a></li>
+      <li><a href="/schneider/index.html#!/schneider_notifications" ng-click="refreshPage()"><img src="images/icon_5.gif">&nbsp;&nbsp;Notification</a></li>
+      <li><a href="/schneider/index.html#!/schneider_report" ng-click="refreshPage()"><img src="images/icon_6.gif">&nbsp;&nbsp;Report</a></li>
     </ul>
 </div>
 <div class="dashboard_right">
     <div style="text-align: center" class="alert alert-success" ng-show="sucess">
        Purchase order created.Blockchain Transaction Id: {{transactionId}} 
       </div>
-      <div style="text-align: center" class="alert alert-success" ng-show="sucesss">
-        Purchase orders created.
+      <div style="text-align: center" class="alert alert-success" ng-show="sucess_bulkUpload">
+        Purchase orders created
        </div>
       <div style="text-align: center" class="alert alert-danger" ng-show="fialuier">
         Could not register data
