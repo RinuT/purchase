@@ -90,7 +90,7 @@ angular.module('myApp.schneider_purchaseOrder', ['ngRoute'])
      
        data : requestInfo
    
-     var res = $http.post('http://ec2-35-173-231-185.compute-1.amazonaws.com:3000/api/PlaceOrder',request).then(function successCallback(response){
+     var res = $http.post('http://p2p-process-network.mybluemix.net/api/PlaceOrder',request).then(function successCallback(response){
              //alert("Successfully placed order");
              $scope.update_response=response;
              $scope.loading = false; 
@@ -179,7 +179,7 @@ var res = $http.post('http://localhost:8080/purchase',request).then(function suc
          //alert("Successfully created product");
          $scope.update_response=response;
          $scope.loading = false; 
-         $scope.sucesss=true
+         $scope.sucess_bulkUpload=true
          $scope.fialuier_date=false
          $scope.fialuier=false
          $scope.transactionId=$scope.update_response.data.transactionId
@@ -189,7 +189,7 @@ var res = $http.post('http://localhost:8080/purchase',request).then(function suc
          $scope.fialuier=true
          $scope.loading = false; 
          $scope.fialuier_date=false
-         $scope.sucesss=false
+         $scope.sucess_bulkUpload=false
      });
     
       }
