@@ -90,7 +90,7 @@ angular.module('myApp.schneider_purchaseOrder', ['ngRoute'])
      
        data : requestInfo
    
-     var res = $http.post('http://p2p-process-network.mybluemix.net/api/PlaceOrder',request).then(function successCallback(response){
+     var res = $http.post('http://ec2-35-173-231-185.compute-1.amazonaws.com:3000/api/PlaceOrder',request).then(function successCallback(response){
              //alert("Successfully placed order");
              $scope.update_response=response;
              $scope.loading = false; 
@@ -151,6 +151,7 @@ angular.module('myApp.schneider_purchaseOrder', ['ngRoute'])
 
      };
      $scope.uploadExcel=function(){
+       $scope.loading=true;
       var myFile=document.getElementById("file");
       var input=myFile;
       var reader=new FileReader();
@@ -169,18 +170,28 @@ for(var i=0;i<$scope.excelJson.length;i++){
 
       "data": $scope.excelJson
 }
+console.log(request)
    var requestInfo = RequestUpload();
  
    data : requestInfo
 
 var res = $http.post('http://localhost:8080/purchase',request).then(function successCallback(response){
-         alert("Successfully created product");
+         //alert("Successfully created product");
          $scope.update_response=response;
+         $scope.loading = false; 
+         $scope.sucesss=true
+         $scope.fialuier_date=false
+         $scope.fialuier=false
+         $scope.transactionId=$scope.update_response.data.transactionId
         
      }, function errorCallback(response){
          console.log("POST-ing of data failed");
+         $scope.fialuier=true
+         $scope.loading = false; 
+         $scope.fialuier_date=false
+         $scope.sucesss=false
      });
-
+    
       }
       reader.readAsBinaryString(input.files[0]);
   }
